@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fake Product Identification</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/qr_code_box.css">
+
+    <style>
+		.nav-item {
+			margin-left: 4%;
+		}
+		.navbar {
+			margin-bottom: 30px;
+			background-color: #142a4d;
+    height: 90px; /* Adjust the height as needed */
+}
+
+.navbar-nav .nav-link {
+    padding: 10px 15px; /* Adjust the padding as needed */
+    line-height: normal; /* Reset the line height */
+}
+
+      
+
+        /* Styles for the form elements */
+        input[type="text"], input[type="number"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px; /* Rounded border */
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #ffc107; /* Yellow button color */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px; /* Rounded border */
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #ffa000; /* Darker yellow on hover */
+        }
+
+        .qr-code {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .qr-code img {
+            max-width: 200px;
+            border-radius: 5px; /* Rounded border for QR code image */
+        }
+        .spacer {
+            height: 50px; /* Adjust the height as needed */
+            width: 100%; /* Take full width of the parent */
+        }
+
+        /* Optional: Add styles for visualization */
+       
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span> Menu
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav justify-content-center align-items-center">
+                    <img src="https://i.ibb.co/k3pMMRX/logo-no-background.png" style="height: 35%; width: 10%; margin-left: 60%;">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="manufacturer.html" class="nav-link">Manufacturer</a></li>
+                    <li class="nav-item"><a href="seller.html" class="nav-link">Retailer</a></li>
+                    <li class="nav-item"><a href="consumer.html" class="nav-link">Consumer</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Content -->
+    <section>
+        <div class="container">
+            <b style="font-size: xx-large;">Add a new Product</b>
+            <div class="spacer"></div>
+
+            <div class="matrix">
+				<table width="100%">
+					<tr width="100%">
+						<td width="15%" align="center">
+						<label for="manufacturerID">Manufacturer ID</label>
+						</td>
+						<td width = "30%">
+						<input  class="form-control" id="manufacturerID" name="Manufacturer ID" type="text" />
+						</td>
+						<td width="15" align="center">
+						<label for="name">Product Name</label>
+						</td>
+						<td width = "30%" >
+						<input class="form-control" id="productName" name="productName" type="text" />
+						</td>
+					</tr>
+
+					<tr width="100%">
+						<td width="15%" align="center">
+						<label for="productSN">Product SN:</label>
+						</td>
+						<td width = "30%">
+						<input  class="form-control" id="productSN" name="productSN" type="text" />
+						</td>
+						<td width="15" align="center">
+						<label for="name">Product Brand</label>
+						</td>
+						<td width = "30%" >
+						<input class="form-control" id="productBrand" name="productBrand" type="text" />
+						</td>
+					</tr>
+
+
+					<tr width="100%">
+						<td width="15%" align="center">
+						<label for="productPrice">Product Price</label>
+						</td>
+						<td width = "30%">
+						<input  class="form-control" id="productPrice" name="productPrice" type="text" />
+						</td>
+					</tr>
+
+						
+					</tr>
+				</table>
+			  </div>
+            <div class="clear">&nbsp;</div>
+            <div align="center">
+                <button type="submit" class="btn btn-warning btn-register" id="register" onclick="fetchQR()">Add the Product</button>
+            </div>
+            <br></br>
+        </div>
+    </section>
+
+    <!-- QR Code section -->
+    <div class="qr-code">
+        <div align="center">
+            <img align="center" hidden id="imgQR" src="" alt="qr-code">
+        </div>
+        <br></br>
+        <div align="center">
+            <button align="center" hidden type="submit" class="btn btn-warning" id="download" onclick="saveImage()">Download QR Code</button>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/productApp.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    <script>
+	var src;
+	var qrValue;
+	function fetchQR(){
+		qrValue = document.getElementById('productSN').value;
+		qrImage = document.querySelector(".qr-code");
+		qrImageResult = qrImage.querySelector("img");
+		src = qrImageResult.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
+		
+
+		downloadQrImg = document.getElementById('imgQR');
+		downloadQrBtn = document.getElementById('download');
+		downloadQrImg.removeAttribute('hidden');
+		downloadQrBtn.removeAttribute('hidden');
+
+	}
+
+	function saveImage(){
+		saveAs(src,qrValue);
+		downloadQrImg.setAttribute('hidden', 'hidden');
+		downloadQrBtn.setAttribute('hidden', 'hidden');
+	}
+	</script>
+
+  </body>
+</html>

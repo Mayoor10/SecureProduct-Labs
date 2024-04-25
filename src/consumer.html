@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Fake Product Identification</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+        
+	
+        .container {
+               text-align: center;
+                margin-bottom: 5%;
+                margin-top: 3%;
+               
+        }
+
+        b {
+            font-size: xx-large;
+        }
+		article{
+			box-shadow: 0 30px 30px -25px rgba(#4133B7, .25);
+		}
+		.nav-item {
+			margin-left: 4%;
+		}
+		.navbar {
+			margin-bottom: 30px;
+			background-color: #142a4d;
+    height: 90px; /* Adjust the height as needed */
+}
+
+.navbar-nav .nav-link {
+    padding: 10px 15px; /* Adjust the padding as needed */
+    line-height: normal; /* Reset the line height */
+	
+}
+.newc{
+	margin-left: 5%;
+	display: grid;
+	column-gap: 0px;
+    grid-template-columns: 40% 40%;
+	row-gap: 0px;
+    margin-left: 27%;
+
+  padding: 10px;
+
+}
+@import url("https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap");
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+:root {
+	// Basic
+	--c-white: #fff;
+	--c-black: #000;
+
+	// Greys
+	--c-ash: #eaeef6;
+	--c-charcoal: #a0a0a0;
+	--c-void: #141b22;
+
+	// Beige/Browns
+	--c-fair-pink: #FFEDEC;
+	--c-apricot: #FBC8BE;
+	--c-coffee: #754D42;
+	--c-del-rio: #917072;
+
+	// Greens
+	--c-java: #1FCAC5;
+
+	// Purples
+	--c-titan-white: #f1eeff;
+	--c-cold-purple: #a69fd6;
+	--c-indigo: #6558d3;
+	--c-governor: #4133B7;
+}
+
+body {
+	font-family: "Spline Sans", sans-serif;
+	line-height: 1.5;
+	min-height: 100vh;
+	background-color: var(--c-ash);
+}
+
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 2.5rem;
+	width: 90%;
+	max-width: 1000px;
+	margin: 10vh auto;
+}
+.information.card {
+    border: 1px solid #4133B7; /* Add border */
+    box-shadow: 0 30px 30px -25px rgba(65, 51, 183, 0.25); /* Add box shadow */
+}
+
+.card {
+	border-radius: 16px;
+	box-shadow: 0 30px 30px -25px rgba(#4133B7, .25);
+	max-width: 300px;
+}
+
+.information {
+	background-color: var(--c-white);
+	padding: 1.5rem;
+
+	.tag {
+		display: inline-block;
+		background-color: var(--c-titan-white);
+		color: var(--c-indigo);
+		font-weight: 600;
+		font-size: 0.875rem;
+		padding: 0.5em 0.75em;
+		line-height: 1;
+		border-radius: 6px;
+		& + * {
+			margin-top: 1rem;
+		}
+	}
+
+	.title {
+		font-size: 1.5rem;
+		color: var(--c-void);
+		line-height: 1.25;
+		& + * {
+			margin-top: 1rem;
+		}
+	}
+
+	.info {
+		color: var(--c-charcoal);
+		& + * {
+			margin-top: 1.25rem;
+		}
+	}
+
+	.button {
+		font: inherit;
+		line-height: 1;
+		background-color: var(--c-white);
+		border: 2px solid var(--c-indigo);
+		color: var(--c-indigo);
+		padding: 0.5em 1em;
+		border-radius: 6px;
+		font-weight: 500;
+		display: inline-flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem;
+		&:hover,
+		&:focus {
+			background-color: var(--c-indigo);
+			color: var(--c-white);
+		}
+	}
+	
+	.details {
+		display: flex;
+		gap: 1rem;
+		div {
+			padding: .75em 1em;
+			background-color: var(--c-titan-white);
+			border-radius: 8px;
+			display: flex;
+			flex-direction: column-reverse;
+			gap: .125em;
+			flex-basis: 50%;
+		}
+		
+		dt {
+			font-size: .875rem;
+			color: var(--c-cold-purple);
+		}
+		
+		dd {
+			color: var(--c-indigo);
+			font-weight: 600;
+			font-size: 1.25rem;
+		}
+	}
+}
+
+
+.plan {
+	padding: 10px;
+	background-color: var(--c-white);
+	color: var(--c-del-rio);
+	
+	strong {
+		font-weight: 600;
+		color: var(--c-coffee);
+	}
+	
+	.inner {
+		padding: 20px;
+		padding-top: 40px;
+		background-color: var(--c-fair-pink);
+		border-radius: 12px;
+	position: relative;
+		overflow: hidden;
+	}
+	
+	.pricing {
+		position: absolute;
+		top: 0;
+		right: 0;
+		background-color: var(--c-apricot);
+		border-radius: 99em 0 0 99em;
+		display: flex;
+		align-items: center;
+		padding: .625em .75em;
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: var(--c-coffee);
+		small {
+			color: var(--c-del-rio);
+			font-size: .75em;
+			margin-left: .25em;
+		}
+		
+	}
+	
+	.title {
+		font-weight: 600;
+		font-size: 1.25rem;
+		color: var(--c-coffee);
+		& + * {
+			margin-top: .75rem;
+		}
+	}
+	
+	.info {
+		& + * {
+			margin-top: 1rem;
+		}
+	}
+	
+	.features {
+		display: flex;
+		flex-direction: column;
+		li {
+			display: flex;
+			align-items: center;
+			gap: .5rem;
+			& + * {
+				margin-top: .75rem;
+			}
+		}
+		
+		.icon {
+			background-color: var(--c-java);
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--c-white);
+			border-radius: 50%;
+			width: 20px;
+			height: 20px;
+			svg {
+				width: 14px;
+				height: 14px;
+			}
+		}
+		
+		& + * {
+			margin-top: 1.25rem;
+		}
+	}
+	
+	button {
+		font: inherit;
+		background-color: var(--c-indigo);
+		border-radius: 6px;
+		color: var(--c-white);
+		font-weight: 500;
+		font-size: 1.125rem;
+		width: 100%;
+		border: 0;
+		padding: 1em;
+		&:hover,
+		&:focus {
+			background-color: var(--c-governor);
+		}
+	}
+	
+	
+}
+	</style>
+	
+
+	</head>
+	<body>
+		<section>
+			<nav class="navbar navbar-expand-lg navbar-dark">
+				<div class="container-fluid">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="fa fa-bars"></span> Menu
+					</button>
+					<div class="collapse navbar-collapse" id="ftco-nav">
+						<ul class="navbar-nav justify-content-center align-items-center">
+							<img src="https://i.ibb.co/k3pMMRX/logo-no-background.png" 
+					style="HEIGHT: 35%;
+					WIDTH: 10%; margin-left: 60%;">
+							<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+							<li class="nav-item"><a href="manufacturer.html" class="nav-link">Manufacturer</a></li>
+							<li class="nav-item"><a href="seller.html" class="nav-link">Retailer</a></li>
+							<li class="nav-item"><a href="consumer.html" class="nav-link">Consumer</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+	
+		<!-- END nav -->
+	
+	
+	  <section>
+        <div class="container">
+            <b>Consumer</b>
+        </div>
+    </section>
+    <div class="newc">
+		<!-- Add a new product -->
+		<article class="information [ card ]">
+			<span class="tag">Feature</span>
+			<h2 class="title">Consumer Purchase History</h2>
+			<p class="info">View purchase history as a consumer.</p>
+			<a href="consumerPurchaseHistory.html" class="button">
+				<span>Go</span> <!-- Link to addProduct.html -->
+				<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+					<path d="M0 0h24v24H0V0z" fill="none" />
+					<path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4v3z" fill="currentColor" />
+				</svg>
+			</a>
+		</article>
+		<!-- Add a new Retailer -->
+		<article class="information [ card ]">
+			<span class="tag">Feature</span>
+			<h2 class="title">Product Verification</h2>
+			<p class="info"></p>Verify the authenticity of a product by scanning the qr code on the product</p>
+			<a href="verifyProducts.html" class="button">
+				<span>Go</span> <!-- Link to addSeller.html -->
+				<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+					<path d="M0 0h24v24H0V0z" fill="none" />
+					<path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4v3z" fill="currentColor" />
+				</svg>
+			</a>
+		</article>
+		<!-- Sell the product to Retailer -->
+
+		<!-- List All Retailers -->
+		
+
+    </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/web3.min.js"></script>
+  <script src="js/truffle-contract.js"></script>
+  <script src="js/sellerDataApp.js"></script>
+  </body>
+</html>
